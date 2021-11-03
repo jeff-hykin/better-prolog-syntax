@@ -18,13 +18,19 @@ export[:predicate_call] = PatternRange.new(
             match: /[a-zA-Z0-9_]+/,
             tag_as: "entity.name.function.call",
         ).then(
-            match: / *+\(/,
+            / *+/
+        ).then(
+            match: /\(/,
             tag_as: "punctuation.section.function.call entity.name.function.call",
         )
     ),
     end_pattern: Pattern.new(
-        match: / *+\)/,
-        tag_as: "punctuation.section.function.call entity.name.function.call",
+        Pattern.new(
+            / *+/
+        ).then(
+            match: /\)/,
+            tag_as: "punctuation.section.function.call entity.name.function.call",
+        ),
     ),
     includes: [
         :$initial_context
@@ -43,13 +49,17 @@ predicate_definition = Pattern.new(
         match: /[a-zA-Z0-9_]+/,
         tag_as: "entity.name.function.definition",
     ).then(
-        match: / *+\(/,
+        / *+/
+    ).then(
+        match: /\(/,
         tag_as: "punctuation.section.function.definition entity.name.function.definition",
     ).then(
         match: /.+/,
     ).then(
-        match: /\) */,
+        match: /\)/,
         tag_as: "punctuation.section.function.definition.4",
+    ).then(
+        / *+/
     ).lookAheadFor(/:-/)
 )
 export[:predicate_definition] = PatternRange.new(
@@ -716,22 +726,29 @@ built_in_predicates = [
     "ERROR",
 ]
 
-export[:built_in_predicates] = Pattern.new(
-    lookBehindToAvoid(@standard_character).then(
-        match: oneOf(built_in_predicates),
-        tag_as: "entity.name.function.call support.type.built-in",
-    ).then(
-        match: / *+\(/,
-        tag_as: "punctuation.section.function.call support.type.built-in",
-    ).then(
-        match: /.+/,
-        includes: [
-            :$initial_context
-        ],
-    ).then(
-        match: /\) */,
-        tag_as: "punctuation.section.function.call support.type.built-in",
-    )
+export[:built_in_predicates] = PatternRange.new(
+    start_pattern: Pattern.new(
+        lookBehindToAvoid(@standard_character).then(
+            match: oneOf(built_in_predicates),
+            tag_as: "entity.name.function.call  support.type.built-in",
+        ).then(
+            / *+/
+        ).then(
+            match: /\(/,
+            tag_as: "punctuation.section.function.call entity.name.function.call support.type.built-in",
+        )
+    ),
+    end_pattern: Pattern.new(
+        Pattern.new(
+            / *+/
+        ).then(
+            match: /\)/,
+            tag_as: "punctuation.section.function.call entity.name.function.call support.type.built-in",
+        ),
+    ),
+    includes: [
+        :$initial_context
+    ],
 )
 
 
