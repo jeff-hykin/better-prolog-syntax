@@ -1,9 +1,9 @@
 {
   "version": "",
-  "name": "YOUR_LANGUAGE",
-  "scopeName": "source.YOUR_LANG_EXTENSION_HERE",
+  "name": "Prolog",
+  "scopeName": "source.prolog",
   "fileTypes": [
-    "YOUR_LANG_EXTENSION_HERE"
+    "prolog"
   ],
   "patterns": [
     {
@@ -22,15 +22,15 @@
       "end": "\\*\\/",
       "beginCaptures": {
         "1": {
-          "name": "punctuation.definition.comment.begin.YOUR_LANG_EXTENSION_HERE"
+          "name": "punctuation.definition.comment.begin.prolog"
         }
       },
       "endCaptures": {
         "0": {
-          "name": "punctuation.definition.comment.end.YOUR_LANG_EXTENSION_HERE"
+          "name": "punctuation.definition.comment.end.prolog"
         }
       },
-      "name": "comment.block.YOUR_LANG_EXTENSION_HERE"
+      "name": "comment.block.prolog"
     },
     "comments": {
       "patterns": [
@@ -46,20 +46,20 @@
       "match": "(\\/\\*)((?:[^\\*]|(?:\\*)++[^\\/])*+((?:\\*)++\\/))",
       "captures": {
         "1": {
-          "name": "comment.block.YOUR_LANG_EXTENSION_HERE punctuation.definition.comment.begin.YOUR_LANG_EXTENSION_HERE"
+          "name": "comment.block.prolog punctuation.definition.comment.begin.prolog"
         },
         "2": {
-          "name": "comment.block.YOUR_LANG_EXTENSION_HERE"
+          "name": "comment.block.prolog"
         },
         "3": {
           "patterns": [
             {
               "match": "\\*\\/",
-              "name": "comment.block.YOUR_LANG_EXTENSION_HERE punctuation.definition.comment.end.YOUR_LANG_EXTENSION_HERE"
+              "name": "comment.block.prolog punctuation.definition.comment.end.prolog"
             },
             {
               "match": "\\*",
-              "name": "comment.block.YOUR_LANG_EXTENSION_HERE"
+              "name": "comment.block.prolog"
             }
           ]
         }
@@ -70,12 +70,12 @@
       "end": "(?<=\\n)(?<!\\\\\\n)",
       "beginCaptures": {
         "1": {
-          "name": "punctuation.definition.comment.YOUR_LANG_EXTENSION_HERE"
+          "name": "punctuation.definition.comment.prolog"
         }
       },
       "endCaptures": {
       },
-      "name": "comment.line.double-slash.YOUR_LANG_EXTENSION_HERE",
+      "name": "comment.line.double-slash.prolog",
       "patterns": [
         {
           "include": "#line_continuation_character"
@@ -84,7 +84,7 @@
     },
     "line_continuation_character": {
       "match": "\\\\\\n",
-      "name": "constant.character.escape.line-continuation.YOUR_LANG_EXTENSION_HERE"
+      "name": "constant.character.escape.line-continuation.prolog"
     },
     "numeric_literal": {
       "match": "(?<!\\w)\\.?\\d(?:(?:[0-9a-zA-Z_\\.]|')|(?<=[eEpP])[+-])*",
@@ -103,55 +103,55 @@
                   "match": "(\\G0[xX])([0-9a-fA-F](?:[0-9a-fA-F]|((?<=[0-9a-fA-F])'(?=[0-9a-fA-F])))*)?((?:(?<=[0-9a-fA-F])\\.|\\.(?=[0-9a-fA-F])))([0-9a-fA-F](?:[0-9a-fA-F]|((?<=[0-9a-fA-F])'(?=[0-9a-fA-F])))*)?(?:(?<!')([pP])((?:\\+)?)((?:\\-)?)([0-9](?:[0-9]|(?<=[0-9a-fA-F])'(?=[0-9a-fA-F]))*))?([lLfF](?!\\w))?$",
                   "captures": {
                     "1": {
-                      "name": "keyword.other.unit.hexadecimal.YOUR_LANG_EXTENSION_HERE"
+                      "name": "keyword.other.unit.hexadecimal.prolog"
                     },
                     "2": {
-                      "name": "constant.numeric.hexadecimal.YOUR_LANG_EXTENSION_HERE",
+                      "name": "constant.numeric.hexadecimal.prolog",
                       "patterns": [
                         {
                           "match": "(?<=[0-9a-fA-F])'(?=[0-9a-fA-F])",
-                          "name": "punctuation.separator.constant.numeric.YOUR_LANG_EXTENSION_HERE"
+                          "name": "punctuation.separator.constant.numeric.prolog"
                         }
                       ]
                     },
                     "3": {
-                      "name": "punctuation.separator.constant.numeric.YOUR_LANG_EXTENSION_HERE"
+                      "name": "punctuation.separator.constant.numeric.prolog"
                     },
                     "4": {
-                      "name": "constant.numeric.hexadecimal.YOUR_LANG_EXTENSION_HERE"
+                      "name": "constant.numeric.hexadecimal.prolog"
                     },
                     "5": {
-                      "name": "constant.numeric.hexadecimal.YOUR_LANG_EXTENSION_HERE",
+                      "name": "constant.numeric.hexadecimal.prolog",
                       "patterns": [
                         {
                           "match": "(?<=[0-9a-fA-F])'(?=[0-9a-fA-F])",
-                          "name": "punctuation.separator.constant.numeric.YOUR_LANG_EXTENSION_HERE"
+                          "name": "punctuation.separator.constant.numeric.prolog"
                         }
                       ]
                     },
                     "6": {
-                      "name": "punctuation.separator.constant.numeric.YOUR_LANG_EXTENSION_HERE"
+                      "name": "punctuation.separator.constant.numeric.prolog"
                     },
                     "7": {
-                      "name": "keyword.other.unit.exponent.hexadecimal.YOUR_LANG_EXTENSION_HERE"
+                      "name": "keyword.other.unit.exponent.hexadecimal.prolog"
                     },
                     "8": {
-                      "name": "keyword.operator.plus.exponent.hexadecimal.YOUR_LANG_EXTENSION_HERE"
+                      "name": "keyword.operator.plus.exponent.hexadecimal.prolog"
                     },
                     "9": {
-                      "name": "keyword.operator.minus.exponent.hexadecimal.YOUR_LANG_EXTENSION_HERE"
+                      "name": "keyword.operator.minus.exponent.hexadecimal.prolog"
                     },
                     "10": {
-                      "name": "constant.numeric.exponent.hexadecimal.YOUR_LANG_EXTENSION_HERE",
+                      "name": "constant.numeric.exponent.hexadecimal.prolog",
                       "patterns": [
                         {
                           "match": "(?<=[0-9a-fA-F])'(?=[0-9a-fA-F])",
-                          "name": "punctuation.separator.constant.numeric.YOUR_LANG_EXTENSION_HERE"
+                          "name": "punctuation.separator.constant.numeric.prolog"
                         }
                       ]
                     },
                     "11": {
-                      "name": "keyword.other.unit.suffix.floating-point.YOUR_LANG_EXTENSION_HERE"
+                      "name": "keyword.other.unit.suffix.floating-point.prolog"
                     }
                   }
                 },
@@ -159,52 +159,52 @@
                   "match": "\\G(?=[0-9.])(?!0[xXbB])([0-9](?:[0-9]|((?<=[0-9a-fA-F])'(?=[0-9a-fA-F])))*)?((?:(?<=[0-9])\\.|\\.(?=[0-9])))([0-9](?:[0-9]|((?<=[0-9a-fA-F])'(?=[0-9a-fA-F])))*)?(?:(?<!')([eE])((?:\\+)?)((?:\\-)?)([0-9](?:[0-9]|(?<=[0-9a-fA-F])'(?=[0-9a-fA-F]))*))?([lLfF](?!\\w))?$",
                   "captures": {
                     "1": {
-                      "name": "constant.numeric.decimal.YOUR_LANG_EXTENSION_HERE",
+                      "name": "constant.numeric.decimal.prolog",
                       "patterns": [
                         {
                           "match": "(?<=[0-9a-fA-F])'(?=[0-9a-fA-F])",
-                          "name": "punctuation.separator.constant.numeric.YOUR_LANG_EXTENSION_HERE"
+                          "name": "punctuation.separator.constant.numeric.prolog"
                         }
                       ]
                     },
                     "2": {
-                      "name": "punctuation.separator.constant.numeric.YOUR_LANG_EXTENSION_HERE"
+                      "name": "punctuation.separator.constant.numeric.prolog"
                     },
                     "3": {
-                      "name": "constant.numeric.decimal.point.YOUR_LANG_EXTENSION_HERE"
+                      "name": "constant.numeric.decimal.point.prolog"
                     },
                     "4": {
-                      "name": "constant.numeric.decimal.YOUR_LANG_EXTENSION_HERE",
+                      "name": "constant.numeric.decimal.prolog",
                       "patterns": [
                         {
                           "match": "(?<=[0-9a-fA-F])'(?=[0-9a-fA-F])",
-                          "name": "punctuation.separator.constant.numeric.YOUR_LANG_EXTENSION_HERE"
+                          "name": "punctuation.separator.constant.numeric.prolog"
                         }
                       ]
                     },
                     "5": {
-                      "name": "punctuation.separator.constant.numeric.YOUR_LANG_EXTENSION_HERE"
+                      "name": "punctuation.separator.constant.numeric.prolog"
                     },
                     "6": {
-                      "name": "keyword.other.unit.exponent.decimal.YOUR_LANG_EXTENSION_HERE"
+                      "name": "keyword.other.unit.exponent.decimal.prolog"
                     },
                     "7": {
-                      "name": "keyword.operator.plus.exponent.decimal.YOUR_LANG_EXTENSION_HERE"
+                      "name": "keyword.operator.plus.exponent.decimal.prolog"
                     },
                     "8": {
-                      "name": "keyword.operator.minus.exponent.decimal.YOUR_LANG_EXTENSION_HERE"
+                      "name": "keyword.operator.minus.exponent.decimal.prolog"
                     },
                     "9": {
-                      "name": "constant.numeric.exponent.decimal.YOUR_LANG_EXTENSION_HERE",
+                      "name": "constant.numeric.exponent.decimal.prolog",
                       "patterns": [
                         {
                           "match": "(?<=[0-9a-fA-F])'(?=[0-9a-fA-F])",
-                          "name": "punctuation.separator.constant.numeric.YOUR_LANG_EXTENSION_HERE"
+                          "name": "punctuation.separator.constant.numeric.prolog"
                         }
                       ]
                     },
                     "10": {
-                      "name": "keyword.other.unit.suffix.floating-point.YOUR_LANG_EXTENSION_HERE"
+                      "name": "keyword.other.unit.suffix.floating-point.prolog"
                     }
                   }
                 },
@@ -212,22 +212,22 @@
                   "match": "(\\G0[bB])([01](?:[01]|((?<=[0-9a-fA-F])'(?=[0-9a-fA-F])))*)((?:[uU]|(?:[uU]ll?)|(?:[uU]LL?)|(?:ll?[uU]?)|(?:LL?[uU]?)|[fF])(?!\\w))?$",
                   "captures": {
                     "1": {
-                      "name": "keyword.other.unit.binary.YOUR_LANG_EXTENSION_HERE"
+                      "name": "keyword.other.unit.binary.prolog"
                     },
                     "2": {
-                      "name": "constant.numeric.binary.YOUR_LANG_EXTENSION_HERE",
+                      "name": "constant.numeric.binary.prolog",
                       "patterns": [
                         {
                           "match": "(?<=[0-9a-fA-F])'(?=[0-9a-fA-F])",
-                          "name": "punctuation.separator.constant.numeric.YOUR_LANG_EXTENSION_HERE"
+                          "name": "punctuation.separator.constant.numeric.prolog"
                         }
                       ]
                     },
                     "3": {
-                      "name": "punctuation.separator.constant.numeric.YOUR_LANG_EXTENSION_HERE"
+                      "name": "punctuation.separator.constant.numeric.prolog"
                     },
                     "4": {
-                      "name": "keyword.other.unit.suffix.integer.YOUR_LANG_EXTENSION_HERE"
+                      "name": "keyword.other.unit.suffix.integer.prolog"
                     }
                   }
                 },
@@ -235,22 +235,22 @@
                   "match": "(\\G0)((?:[0-7]|((?<=[0-9a-fA-F])'(?=[0-9a-fA-F])))+)((?:[uU]|(?:[uU]ll?)|(?:[uU]LL?)|(?:ll?[uU]?)|(?:LL?[uU]?)|[fF])(?!\\w))?$",
                   "captures": {
                     "1": {
-                      "name": "keyword.other.unit.octal.YOUR_LANG_EXTENSION_HERE"
+                      "name": "keyword.other.unit.octal.prolog"
                     },
                     "2": {
-                      "name": "constant.numeric.octal.YOUR_LANG_EXTENSION_HERE",
+                      "name": "constant.numeric.octal.prolog",
                       "patterns": [
                         {
                           "match": "(?<=[0-9a-fA-F])'(?=[0-9a-fA-F])",
-                          "name": "punctuation.separator.constant.numeric.YOUR_LANG_EXTENSION_HERE"
+                          "name": "punctuation.separator.constant.numeric.prolog"
                         }
                       ]
                     },
                     "3": {
-                      "name": "punctuation.separator.constant.numeric.YOUR_LANG_EXTENSION_HERE"
+                      "name": "punctuation.separator.constant.numeric.prolog"
                     },
                     "4": {
-                      "name": "keyword.other.unit.suffix.integer.YOUR_LANG_EXTENSION_HERE"
+                      "name": "keyword.other.unit.suffix.integer.prolog"
                     }
                   }
                 },
@@ -258,40 +258,40 @@
                   "match": "(\\G0[xX])([0-9a-fA-F](?:[0-9a-fA-F]|((?<=[0-9a-fA-F])'(?=[0-9a-fA-F])))*)(?:(?<!')([pP])((?:\\+)?)((?:\\-)?)([0-9](?:[0-9]|(?<=[0-9a-fA-F])'(?=[0-9a-fA-F]))*))?((?:[uU]|(?:[uU]ll?)|(?:[uU]LL?)|(?:ll?[uU]?)|(?:LL?[uU]?)|[fF])(?!\\w))?$",
                   "captures": {
                     "1": {
-                      "name": "keyword.other.unit.hexadecimal.YOUR_LANG_EXTENSION_HERE"
+                      "name": "keyword.other.unit.hexadecimal.prolog"
                     },
                     "2": {
-                      "name": "constant.numeric.hexadecimal.YOUR_LANG_EXTENSION_HERE",
+                      "name": "constant.numeric.hexadecimal.prolog",
                       "patterns": [
                         {
                           "match": "(?<=[0-9a-fA-F])'(?=[0-9a-fA-F])",
-                          "name": "punctuation.separator.constant.numeric.YOUR_LANG_EXTENSION_HERE"
+                          "name": "punctuation.separator.constant.numeric.prolog"
                         }
                       ]
                     },
                     "3": {
-                      "name": "punctuation.separator.constant.numeric.YOUR_LANG_EXTENSION_HERE"
+                      "name": "punctuation.separator.constant.numeric.prolog"
                     },
                     "4": {
-                      "name": "keyword.other.unit.exponent.hexadecimal.YOUR_LANG_EXTENSION_HERE"
+                      "name": "keyword.other.unit.exponent.hexadecimal.prolog"
                     },
                     "5": {
-                      "name": "keyword.operator.plus.exponent.hexadecimal.YOUR_LANG_EXTENSION_HERE"
+                      "name": "keyword.operator.plus.exponent.hexadecimal.prolog"
                     },
                     "6": {
-                      "name": "keyword.operator.minus.exponent.hexadecimal.YOUR_LANG_EXTENSION_HERE"
+                      "name": "keyword.operator.minus.exponent.hexadecimal.prolog"
                     },
                     "7": {
-                      "name": "constant.numeric.exponent.hexadecimal.YOUR_LANG_EXTENSION_HERE",
+                      "name": "constant.numeric.exponent.hexadecimal.prolog",
                       "patterns": [
                         {
                           "match": "(?<=[0-9a-fA-F])'(?=[0-9a-fA-F])",
-                          "name": "punctuation.separator.constant.numeric.YOUR_LANG_EXTENSION_HERE"
+                          "name": "punctuation.separator.constant.numeric.prolog"
                         }
                       ]
                     },
                     "8": {
-                      "name": "keyword.other.unit.suffix.integer.YOUR_LANG_EXTENSION_HERE"
+                      "name": "keyword.other.unit.suffix.integer.prolog"
                     }
                   }
                 },
@@ -299,43 +299,43 @@
                   "match": "\\G(?=[0-9.])(?!0[xXbB])([0-9](?:[0-9]|((?<=[0-9a-fA-F])'(?=[0-9a-fA-F])))*)(?:(?<!')([eE])((?:\\+)?)((?:\\-)?)([0-9](?:[0-9]|(?<=[0-9a-fA-F])'(?=[0-9a-fA-F]))*))?((?:[uU]|(?:[uU]ll?)|(?:[uU]LL?)|(?:ll?[uU]?)|(?:LL?[uU]?)|[fF])(?!\\w))?$",
                   "captures": {
                     "1": {
-                      "name": "constant.numeric.decimal.YOUR_LANG_EXTENSION_HERE",
+                      "name": "constant.numeric.decimal.prolog",
                       "patterns": [
                         {
                           "match": "(?<=[0-9a-fA-F])'(?=[0-9a-fA-F])",
-                          "name": "punctuation.separator.constant.numeric.YOUR_LANG_EXTENSION_HERE"
+                          "name": "punctuation.separator.constant.numeric.prolog"
                         }
                       ]
                     },
                     "2": {
-                      "name": "punctuation.separator.constant.numeric.YOUR_LANG_EXTENSION_HERE"
+                      "name": "punctuation.separator.constant.numeric.prolog"
                     },
                     "3": {
-                      "name": "keyword.other.unit.exponent.decimal.YOUR_LANG_EXTENSION_HERE"
+                      "name": "keyword.other.unit.exponent.decimal.prolog"
                     },
                     "4": {
-                      "name": "keyword.operator.plus.exponent.decimal.YOUR_LANG_EXTENSION_HERE"
+                      "name": "keyword.operator.plus.exponent.decimal.prolog"
                     },
                     "5": {
-                      "name": "keyword.operator.minus.exponent.decimal.YOUR_LANG_EXTENSION_HERE"
+                      "name": "keyword.operator.minus.exponent.decimal.prolog"
                     },
                     "6": {
-                      "name": "constant.numeric.exponent.decimal.YOUR_LANG_EXTENSION_HERE",
+                      "name": "constant.numeric.exponent.decimal.prolog",
                       "patterns": [
                         {
                           "match": "(?<=[0-9a-fA-F])'(?=[0-9a-fA-F])",
-                          "name": "punctuation.separator.constant.numeric.YOUR_LANG_EXTENSION_HERE"
+                          "name": "punctuation.separator.constant.numeric.prolog"
                         }
                       ]
                     },
                     "7": {
-                      "name": "keyword.other.unit.suffix.integer.YOUR_LANG_EXTENSION_HERE"
+                      "name": "keyword.other.unit.suffix.integer.prolog"
                     }
                   }
                 },
                 {
                   "match": "(?:(?:[0-9a-zA-Z_\\.]|')|(?<=[eEpP])[+-])+",
-                  "name": "invalid.illegal.constant.numeric.YOUR_LANG_EXTENSION_HERE"
+                  "name": "invalid.illegal.constant.numeric.prolog"
                 }
               ]
             }
@@ -348,24 +348,24 @@
       "end": "\"",
       "beginCaptures": {
         "0": {
-          "name": "punctuation.definition.string.YOUR_LANG_EXTENSION_HERE"
+          "name": "punctuation.definition.string.prolog"
         }
       },
       "endCaptures": {
         "0": {
-          "name": "punctuation.definition.string.YOUR_LANG_EXTENSION_HERE"
+          "name": "punctuation.definition.string.prolog"
         }
       },
       "patterns": [
         {
           "match": "\\\\.",
-          "name": "constant.character.escape.YOUR_LANG_EXTENSION_HERE"
+          "name": "constant.character.escape.prolog"
         }
       ]
     },
     "variable": {
       "match": "(?<!\\w)[a-zA-Z_][a-zA-Z_0-9]*(?!\\w)",
-      "name": "variable.other.YOUR_LANG_EXTENSION_HERE"
+      "name": "variable.other.prolog"
     }
   }
 }

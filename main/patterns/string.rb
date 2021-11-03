@@ -15,7 +15,7 @@ escape_pattern = Pattern.new(
     tag_as: "constant.character.escape"
 )
 
-export[:string] = PatternRange.new(
+export[:string_double_quote] = PatternRange.new(
     start_pattern: Pattern.new(
         match: /"/,
         tag_as: "punctuation.definition.string"
@@ -28,3 +28,22 @@ export[:string] = PatternRange.new(
         escape_pattern
     ],
 )
+
+export[:string_single_quote] = PatternRange.new(
+    start_pattern: Pattern.new(
+        match: /'/,
+        tag_as: "punctuation.definition.string"
+    ),
+    end_pattern: Pattern.new(
+        match: /'/,
+        tag_as: "punctuation.definition.string"
+    ),
+    includes: [
+        escape_pattern
+    ],
+)
+
+export[:string] = [
+    :string_double_quote,
+    :string_single_quote,
+]
