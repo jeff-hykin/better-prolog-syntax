@@ -16,12 +16,13 @@ NOTE: The default VS Code theme does not color much. Switch to the Dark+ theme (
 - [Default Theme Enhanced](https://marketplace.visualstudio.com/items?itemName=ms-vscode.cpptools-themes)
 
 ## How do I use it?
-Just install the VS Code extension and the changes will automatically be applied to all relevent files.
+- If you already have the Prolog extension, sadly it needs to be disabled or uninstalled first because it will override this extension.
+- After that just install the VS Code extension and the changes will automatically be applied.
 
-<!-- # Before and After (Material Theme)
+# Before and After (XD Theme: MixItUp variant)
 Before                     | After 
 :-------------------------:|:-------------------------:
-![material_before](https://user-images.githubusercontent.com/17692058/59826753-83abd080-92fc-11e9-9dfb-d891da55cd13.png) | ![material_after](https://user-images.githubusercontent.com/17692058/59826766-8ad2de80-92fc-11e9-9bd6-3496ed5c917b.png) -->
+![code_before](https://user-images.githubusercontent.com/17692058/140219985-df9f82a2-e3bf-4c18-b9b6-abca88d44733.png) | ![code_after](https://user-images.githubusercontent.com/17692058/140220023-cd68f0fd-146c-4af0-bd47-4bf85c4ee2b4.png)
 
 ## Contributing
 If you'd like to help improve the syntax, take a look at `main/main.rb`. And make sure to take a look at `CONTRIBUTING.md` to get a better idea of how code works.
