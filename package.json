@@ -5,6 +5,9 @@
     "version": "0.0.1",
     "icon": "icon.png",
     "scripts": {},
+    "repository": {
+        "url": "https://github.com/jeff-hykin/better-prolog-syntax.git"
+    },
     "keywords": [
         "syntax",
         "textmate",
