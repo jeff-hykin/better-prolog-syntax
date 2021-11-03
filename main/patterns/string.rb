@@ -16,14 +16,14 @@ escape_pattern = Pattern.new(
 )
 
 export[:string_double_quote] = PatternRange.new(
-    tag_as: "punctuation.definition.string.double",
+    tag_as: "string.quoted.double",
     start_pattern: Pattern.new(
         match: /"/,
-        tag_as: "punctuation.definition.string"
+        tag_as: "string.quoted"
     ),
     end_pattern: Pattern.new(
         match: /"/,
-        tag_as: "punctuation.definition.string"
+        tag_as: "string.quoted"
     ),
     includes: [
         escape_pattern
@@ -31,14 +31,14 @@ export[:string_double_quote] = PatternRange.new(
 )
 
 export[:string_single_quote] = PatternRange.new(
-    tag_as: "punctuation.definition.string.single",
+    tag_as: "string.quoted.single",
     start_pattern: Pattern.new(
         match: /'/,
-        tag_as: "punctuation.definition.string"
+        tag_as: "string.quoted"
     ),
     end_pattern: Pattern.new(
         match: /'/,
-        tag_as: "punctuation.definition.string"
+        tag_as: "string.quoted"
     ),
     includes: [
         escape_pattern

@@ -24,7 +24,7 @@ grammar = Grammar.new(
 #
 # 
     grammar[:$initial_context] = [
-        :line_comment,
+        :comments,
         :string,
         :numeric_literal,
         :operators,
@@ -53,8 +53,8 @@ grammar = Grammar.new(
         tag_as: "variable.other",
     )
     grammar[:symbol] = Pattern.new(
-        match: variableBounds[ /[a-zA-Z][a-zA-Z0-9_]*/ ],
-        tag_as: "constant.language.symbol",
+        match: variableBounds[ /[a-z][a-zA-Z0-9_]*/ ],
+        tag_as: "constant.language.symbol punctuation.section.regexp",
     )
     grammar[:paraentheses] = PatternRange.new(
         start_pattern: Pattern.new(

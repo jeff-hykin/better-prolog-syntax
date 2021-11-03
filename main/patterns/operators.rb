@@ -75,6 +75,7 @@ all_operators = [
     '.',
     '$',
 ]
+all_operators = all_operators.sort_by(&:length)
 
 export[:basic_operators] = Pattern.new(
     match: oneOf(all_operators.select{ |each| not (each =~ /\A\w+\z/) }),
@@ -91,10 +92,10 @@ export[:word_operators] = Pattern.new(
 export[:assignment_operators] = Pattern.new(
     match: oneOf([
         Pattern.new(
-            lookBehindToAvoid(/=/).then(
+            lookBehindToAvoid(/=|:|@|\.|>|\</).then(
                 match: /\=/,
                 tag_as: "keyword.operator.assignment",
-            ).lookAheadToAvoid(/=/)   
+            ).lookAheadToAvoid(/=|:|@|\.|>|\</)   
         ),
         Pattern.new(
             lookBehindToAvoid(@standard_character).then(
@@ -105,7 +106,19 @@ export[:assignment_operators] = Pattern.new(
     ]),
 )
 
+export[:predicate_operator] = Pattern.new(
+    match: /:-/,
+    tag_as: "punctuation.section.function.definition entity.name.type"
+)
+
+export[:basically_punctuation] = Pattern.new(
+    match: /,|\./,
+    tag_as: "punctuation.terminator"
+)
+
 export[:operators] = [
+    :basically_punctuation,
+    :predicate_operator,
     :assignment_operators,
     :word_operators,
     :basic_operators,

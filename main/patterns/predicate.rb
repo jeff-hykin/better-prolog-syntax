@@ -4,9 +4,12 @@ require 'walk_up'
 require_relative walk_up_until("paths.rb")
 
 export = Grammar.new_exportable_grammar
-export.external_repos = [] # patterns that are imported
+export.external_repos = [
+    :destrcturing,
+] # patterns that are imported
 export.exports = [ # patterns that are exported
     :predicate,
+    :parameter_context,
 ]
 
 export[:predicate_call] = PatternRange.new(
@@ -16,34 +19,69 @@ export[:predicate_call] = PatternRange.new(
             tag_as: "entity.name.function.call",
         ).then(
             match: / *+\(/,
-            tag_as: "punctuation.section.function.call",
+            tag_as: "punctuation.section.function.call entity.name.function.call",
         )
     ),
     end_pattern: Pattern.new(
         match: / *+\)/,
-        tag_as: "punctuation.section.function.call",
+        tag_as: "punctuation.section.function.call entity.name.function.call",
     ),
     includes: [
         :$initial_context
     ],
 )
 
-export[:predicate_definition] = Pattern.new(
+export[:special_predicate] = Pattern.new(
+    lookBehindToAvoid(@standard_character).then(
+        match: /_/,
+        tag_as: "support.type.built-in",
+    ).lookAheadToAvoid(@standard_character)
+)
+
+predicate_definition = Pattern.new(
     lookBehindToAvoid(@standard_character).then(
         match: /[a-zA-Z0-9_]+/,
         tag_as: "entity.name.function.definition",
     ).then(
         match: / *+\(/,
-        tag_as: "punctuation.section.function.definition",
+        tag_as: "punctuation.section.function.definition entity.name.function.definition",
     ).then(
         match: /.+/,
-        includes: [
-            :$initial_context
-        ],
     ).then(
         match: /\) */,
-        tag_as: "punctuation.section.function.definition",
+        tag_as: "punctuation.section.function.definition.4",
     ).lookAheadFor(/:-/)
+)
+export[:predicate_definition] = PatternRange.new(
+    tag_as: "meta.function.definition",
+    start_pattern: Pattern.new(
+        lookAheadFor(predicate_definition).lookBehindToAvoid(@standard_character).then(
+            match: /[a-zA-Z0-9_]+/,
+            tag_as: "entity.name.function.definition",
+        ).then(
+            match: / *+/,
+        ).then(
+            match: /\(/,
+            tag_as: "punctuation.section.function.definition entity.name.function.definition",
+        )
+    ),
+    end_pattern: Pattern.new(
+        Pattern.new(
+            / *+/
+        ).then(
+            match: /\)/,
+            tag_as: "punctuation.section.function.definition.1 entity.name.function.definition",
+        ).then(
+            / *+/
+        ).then(
+            match: /:-/,
+            tag_as: "punctuation.section.function.definition.2 entity.name.type",
+        ),
+    ),
+    includes: [
+        :parameter_context,
+        :$initial_context,
+    ],
 )
 
 
@@ -697,8 +735,42 @@ export[:built_in_predicates] = Pattern.new(
 )
 
 
+
+
+
+export[:parameter] = Pattern.new(
+    match: Pattern.new(
+        lookBehindToAvoid(@standard_character).then(
+            /[A-Z][a-zA-Z0-9_]*/
+        ).lookAheadToAvoid(@standard_character)
+    ),
+    tag_as: "variable.parameter",
+)
+
+export[:parameter_destrcturing] = PatternRange.new(
+    start_pattern: Pattern.new(
+        match: / *+\[/,
+        tag_as: "keyword.operator punctuation.section.binding-pattern",
+    ),
+    end_pattern: Pattern.new(
+        match: / *+\]/,
+        tag_as: "keyword.operator punctuation.section.binding-pattern",
+    ),
+    includes: [
+        :parameter_context,
+        :$initial_context,
+    ],
+)
+
+export[:parameter_context] = [
+    :parameter,
+    :parameter_destrcturing,
+    :$initial_context,
+]
+
 export[:predicate] = [
+    :special_predicate,
+    :predicate_definition,
     :built_in_predicates,
     :predicate_call,
-    :predicate_definition,
 ]
