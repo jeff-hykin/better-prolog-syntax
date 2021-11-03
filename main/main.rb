@@ -26,9 +26,13 @@ grammar = Grammar.new(
     grammar[:$initial_context] = [
         :line_comment,
         :string,
+        :numeric_literal,
+        :operators,
+        :predicate,
         :variable,
         :symbol,
-        :predicate,
+        :list,
+        :paraentheses,
     ]
 
 # 
@@ -49,8 +53,21 @@ grammar = Grammar.new(
         tag_as: "variable.other",
     )
     grammar[:symbol] = Pattern.new(
-        match: variableBounds[ /[a-zA-Z0-9_]+/ ],
+        match: variableBounds[ /[a-zA-Z][a-zA-Z0-9_]*/ ],
         tag_as: "constant.language.symbol",
+    )
+    grammar[:paraentheses] = PatternRange.new(
+        start_pattern: Pattern.new(
+            match: / *+\(/,
+            tag_as: "punctuation.parenthesis",
+        ),
+        end_pattern: Pattern.new(
+            match: / *+\)/,
+            tag_as: "punctuation.parenthesis",
+        ),
+        includes: [
+            :$initial_context
+        ],
     )
     
     # List
@@ -71,6 +88,8 @@ grammar = Grammar.new(
     grammar.import(PathFor[:pattern]["string"])
     grammar.import(PathFor[:pattern]["numeric_literal"])
     grammar.import(PathFor[:pattern]["predicate"])
+    grammar.import(PathFor[:pattern]["list"])
+    grammar.import(PathFor[:pattern]["operators"])
 
 #
 # Save

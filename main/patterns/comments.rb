@@ -23,7 +23,7 @@ export[:line_comment] = Pattern.new(
             match: /%/,
             tag_as: "punctuation.definition.comment"
         ).then(
-            match: /.+/,
+            match: /.*/,
             tag_as: "comment.line"
         )
     ),
