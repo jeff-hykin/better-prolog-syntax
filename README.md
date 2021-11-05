@@ -5,7 +5,7 @@ Before                     | After
 
 ## How do I use it?
 - If you already have the Prolog extension, sadly it needs to be disabled or uninstalled first because it will override this extension.
-- Prolog unfortunately chose to have the same file extension as Perl (`.pl`), which is a built-in language.
+- Prolog unfortunately chose to have the same file extension as Perl (`.pl`), and Perl is a built-in language.
   - so, to make the file show up as Prolog, follow this guide. [guide](https://www.gyanblog.com/vscode/visual-studio-code-associate-file-extensions-language/)
   - basically replace their `"*.module": "php", ` with `"*.pl": "prolog", `
   - (if the changes don't seem to apply, try reloading VS Code)
