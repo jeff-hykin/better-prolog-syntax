@@ -2,7 +2,7 @@
     "name": "better-prolog-syntax",
     "displayName": "Better Prolog Syntax",
     "description": "",
-    "version": "0.1.1",
+    "version": "0.1.2",
     "icon": "icon.png",
     "scripts": {},
     "repository": {
@@ -31,7 +31,7 @@
                     "prolog"
                 ],
                 "extensions": [
-                    "pl"
+                    ".pl"
                 ],
                 "configuration": "./prolog.configuration.json"
             }
