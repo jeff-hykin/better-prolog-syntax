@@ -25,6 +25,7 @@ keyword.other.unit.exponent.decimal.prolog
 keyword.other.unit.exponent.hexadecimal.prolog
 keyword.other.unit.hexadecimal.prolog
 keyword.other.unit.octal.prolog
+keyword.other.unit.prolog
 keyword.other.unit.suffix.floating-point.prolog
 keyword.other.unit.suffix.integer.prolog
 meta.function.definition.prolog
@@ -35,8 +36,6 @@ punctuation.definition.list.prolog
 punctuation.parenthesis.prolog
 punctuation.section.binding-pattern.prolog
 punctuation.section.function.call.prolog
-punctuation.section.function.definition.1.prolog
-punctuation.section.function.definition.2.prolog
 punctuation.section.function.definition.4.prolog
 punctuation.section.function.definition.prolog
 punctuation.section.regexp.prolog
@@ -46,5 +45,7 @@ string.quoted.double.prolog
 string.quoted.prolog
 string.quoted.single.prolog
 support.type.built-in.prolog
+variable.language.self.anonymous.prolog
 variable.other.prolog
+variable.other.singleton.prolog
 variable.parameter.prolog

@@ -108,7 +108,7 @@ export[:assignment_operators] = Pattern.new(
 
 export[:predicate_operator] = Pattern.new(
     match: /:-/,
-    tag_as: "punctuation.section.function.definition entity.name.type"
+    tag_as: "punctuation.section.function.definition entity.name.type keyword.operator"
 )
 
 export[:basically_punctuation] = Pattern.new(

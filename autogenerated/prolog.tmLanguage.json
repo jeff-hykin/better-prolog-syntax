@@ -22,7 +22,7 @@
       "include": "#predicate"
     },
     {
-      "include": "#variable"
+      "include": "#variables"
     },
     {
       "include": "#symbol"
@@ -107,7 +107,7 @@
       ]
     },
     "04358e2e175_parameter": {
-      "match": "(?<!\\w)[A-Z][a-zA-Z0-9_]*(?!\\w)",
+      "match": "(?<!\\w)_?[A-Z][a-zA-Z0-9_]*(?!\\w)",
       "name": "variable.parameter.prolog"
     },
     "04358e2e175_parameter_destrcturing": {
@@ -176,10 +176,10 @@
       },
       "endCaptures": {
         "1": {
-          "name": "punctuation.section.function.definition.1.prolog entity.name.function.definition.prolog"
+          "name": "punctuation.section.function.definition.prolog entity.name.function.definition.prolog"
         },
         "2": {
-          "name": "punctuation.section.function.definition.2.prolog entity.name.type.prolog"
+          "name": "punctuation.section.function.definition.prolog keyword.operator.prolog"
         }
       },
       "name": "meta.function.definition.prolog",
@@ -191,14 +191,6 @@
           "include": "$self"
         }
       ]
-    },
-    "04358e2e175_special_predicate": {
-      "match": "(?<!\\w)(_)(?!\\w)",
-      "captures": {
-        "1": {
-          "name": "support.type.built-in.prolog"
-        }
-      }
     },
     "5aa8b7571b4_string_double_quote": {
       "begin": "\"",
@@ -242,6 +234,22 @@
         }
       ]
     },
+    "5eef71a102f_normal_variable": {
+      "match": "(?<!\\w)(?:[A-Z]|_)[a-zA-Z0-9_]*(?!\\w)",
+      "name": "variable.other.prolog"
+    },
+    "5eef71a102f_singleton_variable": {
+      "match": "(?<!\\w)(?:__|_[A-Z])[a-zA-Z0-9_]*(?!\\w)",
+      "name": "variable.other.singleton.prolog"
+    },
+    "5eef71a102f_special_variable": {
+      "match": "(?<!\\w)(_)(?!\\w)",
+      "captures": {
+        "1": {
+          "name": "variable.language.self.anonymous.prolog"
+        }
+      }
+    },
     "comments": {
       "patterns": [
         {
@@ -276,7 +284,7 @@
     },
     "fdd1e9df26b_predicate_operator": {
       "match": ":-",
-      "name": "punctuation.section.function.definition.prolog entity.name.type.prolog"
+      "name": "punctuation.section.function.definition.prolog entity.name.type.prolog keyword.operator.prolog"
     },
     "fdd1e9df26b_word_operators": {
       "match": "(?<!\\w)((?:(?:is)|(?:as)|(?:xor)|(?:div)|(?:mod)|(?:rem)|(?:rdiv)|(?:public)|(?:dynamic)|(?:volatile)|(?:multifile)|(?:thread_local)|(?:discontiguous)|(?:meta_predicate)|(?:initialization)|(?:module_transparent)|(?:thread_initialization)))(?!\\w)",
@@ -640,12 +648,26 @@
       ]
     },
     "symbol": {
-      "match": "(?<!\\w)[a-z][a-zA-Z0-9_]*(?!\\w)",
+      "match": "(?<!\\w)[a-z][a-zA-Z0-9_]*(?!\\w)((?:\\/\\d+)?)",
+      "captures": {
+        "1": {
+          "name": "keyword.other.unit.prolog"
+        }
+      },
       "name": "constant.language.symbol.prolog punctuation.section.regexp.prolog"
     },
-    "variable": {
-      "match": "(?<!\\w)[A-Z][a-zA-Z0-9_]*(?!\\w)",
-      "name": "variable.other.prolog"
+    "variables": {
+      "patterns": [
+        {
+          "include": "#5eef71a102f_special_variable"
+        },
+        {
+          "include": "#5eef71a102f_singleton_variable"
+        },
+        {
+          "include": "#5eef71a102f_normal_variable"
+        }
+      ]
     }
   }
 }

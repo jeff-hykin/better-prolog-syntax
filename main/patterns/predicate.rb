@@ -37,13 +37,6 @@ export[:predicate_call] = PatternRange.new(
     ],
 )
 
-export[:special_predicate] = Pattern.new(
-    lookBehindToAvoid(@standard_character).then(
-        match: /_/,
-        tag_as: "support.type.built-in",
-    ).lookAheadToAvoid(@standard_character)
-)
-
 predicate_definition = Pattern.new(
     lookBehindToAvoid(@standard_character).then(
         match: /[a-zA-Z0-9_]+/,
@@ -80,12 +73,12 @@ export[:predicate_definition] = PatternRange.new(
             / *+/
         ).then(
             match: /\)/,
-            tag_as: "punctuation.section.function.definition.1 entity.name.function.definition",
+            tag_as: "punctuation.section.function.definition entity.name.function.definition",
         ).then(
             / *+/
         ).then(
             match: /:-/,
-            tag_as: "punctuation.section.function.definition.2 entity.name.type",
+            tag_as: "punctuation.section.function.definition keyword.operator",
         ),
     ),
     includes: [
@@ -758,7 +751,7 @@ export[:built_in_predicates] = PatternRange.new(
 export[:parameter] = Pattern.new(
     match: Pattern.new(
         lookBehindToAvoid(@standard_character).then(
-            /[A-Z][a-zA-Z0-9_]*/
+            /_?[A-Z][a-zA-Z0-9_]*/
         ).lookAheadToAvoid(@standard_character)
     ),
     tag_as: "variable.parameter",

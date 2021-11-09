@@ -29,7 +29,7 @@ grammar = Grammar.new(
         :numeric_literal,
         :operators,
         :predicate,
-        :variable,
+        :variables,
         :symbol,
         :list,
         :paraentheses,
@@ -43,18 +43,23 @@ grammar = Grammar.new(
     identifierBounds = ->(regex_pattern) do
         lookBehindToAvoid(@standard_character).then(regex_pattern).lookAheadToAvoid(@standard_character)
     end
-    identifier = identifierBounds[part_of_a_variable]
+    identifier = identifierBounds[part_of_a_identifier]
     
 # 
 # basic patterns
 # 
-    grammar[:variable] = Pattern.new(
-        match: identifierBounds[ /([A-Z]|_)[a-zA-Z0-9_]*/ ],
-        tag_as: "variable.other",
-    )
     grammar[:symbol] = Pattern.new(
-        match: identifierBounds[ /[a-z][a-zA-Z0-9_]*/ ],
+        should_fully_match: [ "initialize", "initialize/2", ],
+        # regexp is just for default coloring
         tag_as: "constant.language.symbol punctuation.section.regexp",
+        match: Pattern.new(
+            Pattern.new(
+                identifierBounds[ /[a-z][a-zA-Z0-9_]*/ ]
+            ).maybe(
+                match: /\/\d+/,
+                tag_as: "keyword.other.unit"
+            )
+        ),
     )
     grammar[:paraentheses] = PatternRange.new(
         start_pattern: Pattern.new(
@@ -85,6 +90,7 @@ grammar = Grammar.new(
 # imports
 # 
     grammar.import(PathFor[:pattern]["comments"])
+    grammar.import(PathFor[:pattern]["variables"])
     grammar.import(PathFor[:pattern]["string"])
     grammar.import(PathFor[:pattern]["numeric_literal"])
     grammar.import(PathFor[:pattern]["predicate"])
