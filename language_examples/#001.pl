@@ -2,6 +2,8 @@
 
 :- module(wumpus,[initialize/2, execute/2, display_world/0]).
 
+
+
 % AM
 :- use_module(library(lists)).
 

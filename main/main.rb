@@ -38,22 +38,22 @@ grammar = Grammar.new(
 # 
 # Helpers
 # 
-    part_of_a_variable = /[a-zA-Z_][a-zA-Z_0-9]*/
-    # this is really useful for keywords. eg: variableBounds[/new/] wont match "newThing" or "thingnew"
-    variableBounds = ->(regex_pattern) do
+    part_of_a_identifier = /[a-zA-Z_][a-zA-Z_0-9]*/
+    # this is really useful for keywords. eg: identifierBounds[/new/] wont match "newThing" or "thingnew"
+    identifierBounds = ->(regex_pattern) do
         lookBehindToAvoid(@standard_character).then(regex_pattern).lookAheadToAvoid(@standard_character)
     end
-    variable = variableBounds[part_of_a_variable]
+    identifier = identifierBounds[part_of_a_variable]
     
 # 
 # basic patterns
 # 
     grammar[:variable] = Pattern.new(
-        match: variableBounds[ /[A-Z][a-zA-Z0-9_]*/ ],
+        match: identifierBounds[ /([A-Z]|_)[a-zA-Z0-9_]*/ ],
         tag_as: "variable.other",
     )
     grammar[:symbol] = Pattern.new(
-        match: variableBounds[ /[a-z][a-zA-Z0-9_]*/ ],
+        match: identifierBounds[ /[a-z][a-zA-Z0-9_]*/ ],
         tag_as: "constant.language.symbol punctuation.section.regexp",
     )
     grammar[:paraentheses] = PatternRange.new(
