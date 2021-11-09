@@ -13,6 +13,7 @@ entity.name.function.call.prolog
 entity.name.function.definition.prolog
 entity.name.type.prolog
 invalid.illegal.constant.numeric.prolog
+keyword.control.import.prolog
 keyword.operator.assignment.prolog
 keyword.operator.minus.exponent.decimal.prolog
 keyword.operator.minus.exponent.hexadecimal.prolog
@@ -24,6 +25,7 @@ keyword.other.unit.binary.prolog
 keyword.other.unit.exponent.decimal.prolog
 keyword.other.unit.exponent.hexadecimal.prolog
 keyword.other.unit.hexadecimal.prolog
+keyword.other.unit.import.prolog
 keyword.other.unit.octal.prolog
 keyword.other.unit.prolog
 keyword.other.unit.suffix.floating-point.prolog
@@ -45,6 +47,7 @@ string.quoted.double.prolog
 string.quoted.prolog
 string.quoted.single.prolog
 support.type.built-in.prolog
+variable.language.file.prolog
 variable.language.self.anonymous.prolog
 variable.other.prolog
 variable.other.singleton.prolog

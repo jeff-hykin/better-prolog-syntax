@@ -13,7 +13,7 @@ grammar = Grammar.new(
     name: "Prolog",
     scope_name: "source.prolog",
     fileTypes: [
-        "prolog",
+        ".pl",
     ],
     version: "",
 )

@@ -744,6 +744,19 @@ export[:built_in_predicates] = PatternRange.new(
     ],
 )
 
+export[:special_predicate_import] = Pattern.new(
+    Pattern.new(
+        match: /\[/,
+        tag_as: "keyword.control.import punctuation.section.regexp keyword.other.unit.import",
+    ).maybe(@spaces).then(
+        # an identifier
+        match: /[a-zA-Z_][a-zA-Z_0-9]*/,
+        tag_as: "variable.language.file",
+    ).maybe(@spaces).then(
+        match: /\]/,
+        tag_as: "keyword.control.import punctuation.section.regexp keyword.other.unit.import",
+    ).lookAheadFor(".")
+)
 
 
 
@@ -779,7 +792,7 @@ export[:parameter_context] = [
 ]
 
 export[:predicate] = [
-    :special_predicate,
+    :special_predicate_import,
     :predicate_definition,
     :built_in_predicates,
     :predicate_call,

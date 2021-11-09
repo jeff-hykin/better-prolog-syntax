@@ -7,7 +7,7 @@ specifiers:
   nspell: ^2.1.2
   oniguruma: ^7.2.0
   textmate-bailout: ^1.1.0
-  textmate-tester: ^1.1.0
+  textmate-tester: 1.1.1
   vsce: ^1.99.0
 
 devDependencies:
@@ -17,7 +17,7 @@ devDependencies:
   nspell: 2.1.5
   oniguruma: 7.2.3
   textmate-bailout: 1.1.0
-  textmate-tester: 1.1.0
+  textmate-tester: 1.1.1
   vsce: 1.99.0
 
 packages:
@@ -97,8 +97,8 @@ packages:
     resolution: {integrity: sha1-5QNHYR1+aQlDIIu9r+vLwvuGbUY=}
     dev: true
 
-  /asn1/0.2.4:
-    resolution: {integrity: sha512-jxwzQpLQjSmWXgwaCZE9Nz+glAG01yF1QnWgbhGwHI5A6FRIEY6IVqtHhIepHqI7/kyEyQEagBC5mBEFlIYvdg==}
+  /asn1/0.2.6:
+    resolution: {integrity: sha512-ix/FxPn0MDjeyJ7i/yoHGFt/EX6LyNbxSEhPPXODPL+KB0VPk86UYfL0lMdy+KCnv+fmvIzySwaK5COwqVbWTQ==}
     dependencies:
       safer-buffer: 2.1.2
     dev: true
@@ -415,7 +415,7 @@ packages:
     dependencies:
       asynckit: 0.4.0
       combined-stream: 1.0.8
-      mime-types: 2.1.32
+      mime-types: 2.1.34
     dev: true
 
   /fs-minipass/1.2.7:
@@ -439,10 +439,10 @@ packages:
       console-control-strings: 1.1.0
       has-unicode: 2.0.1
       object-assign: 4.1.1
-      signal-exit: 3.0.3
+      signal-exit: 3.0.5
       string-width: 1.0.2
       strip-ansi: 3.0.1
-      wide-align: 1.1.3
+      wide-align: 1.1.5
     dev: true
 
   /get-caller-file/2.0.5:
@@ -471,6 +471,17 @@ packages:
 
   /glob/7.1.7:
     resolution: {integrity: sha512-OvD9ENzPLbegENnYP5UUfJIirTg4+XwMWGaQfQTY0JenxNvvIKP3U3/tAQSPIu/lHxXYSZmpXlUHeqAIdKzBLQ==}
+    dependencies:
+      fs.realpath: 1.0.0
+      inflight: 1.0.6
+      inherits: 2.0.4
+      minimatch: 3.0.4
+      once: 1.4.0
+      path-is-absolute: 1.0.1
+    dev: true
+
+  /glob/7.2.0:
+    resolution: {integrity: sha512-lmLf6gtyrPq8tTjSmrO94wBeQbFR3HbLHbuyD69wuyQkImp2hWqMGB47OX65FBkPffO641IP9jWa1z4ivqG26Q==}
     dependencies:
       fs.realpath: 1.0.0
       inflight: 1.0.6
@@ -697,16 +708,16 @@ packages:
     resolution: {integrity: sha1-/oWy7HWlkDfyrf7BAP1sYBdhFS4=}
     dev: true
 
-  /mime-db/1.49.0:
-    resolution: {integrity: sha512-CIc8j9URtOVApSFCQIF+VBkX1RwXp/oMMOrqdyXSBXq5RWNEsRfyj1kiRnQgmNXmHxPoFIxOroKA3zcU9P+nAA==}
+  /mime-db/1.51.0:
+    resolution: {integrity: sha512-5y8A56jg7XVQx2mbv1lu49NR4dokRnhZYTtL+KGfaa27uq4pSTXkwQkFJl4pkRMyNFz/EtYDSkiiEHx3F7UN6g==}
     engines: {node: '>= 0.6'}
     dev: true
 
-  /mime-types/2.1.32:
-    resolution: {integrity: sha512-hJGaVS4G4c9TSMYh2n6SQAGrC4RnfU+daP8G7cSCmaqNjiOoUY0VHCMS42pxnQmVF1GWwFhbHWn3RIxCqTmZ9A==}
+  /mime-types/2.1.34:
+    resolution: {integrity: sha512-6cP692WwGIs9XXdOO4++N+7qjqv0rqxxVvJ3VHPh/Sc9mVZcQP+ZGhkKiTvWMQRr2tbHkJP/Yn7Y0npb3ZBs4A==}
     engines: {node: '>= 0.6'}
     dependencies:
-      mime-db: 1.49.0
+      mime-db: 1.51.0
     dev: true
 
   /mime/1.6.0:
@@ -758,7 +769,7 @@ packages:
     engines: {node: '>= 4.0.0'}
     hasBin: true
     dependencies:
-      glob: 7.1.7
+      glob: 7.2.0
       graceful-fs: 4.2.8
       mkdirp: 0.5.5
       nopt: 3.0.6
@@ -984,7 +995,7 @@ packages:
       is-typedarray: 1.0.0
       isstream: 0.1.2
       json-stringify-safe: 5.0.1
-      mime-types: 2.1.32
+      mime-types: 2.1.34
       oauth-sign: 0.9.0
       performance-now: 2.1.0
       qs: 6.5.2
@@ -1007,7 +1018,7 @@ packages:
     resolution: {integrity: sha512-uWjbaKIK3T1OSVptzX7Nl6PvQ3qAGtKEtVRjRuazjfL3Bx5eI409VZSqgND+4UNnmzLVdPj9FqFJNPqBZFve4w==}
     hasBin: true
     dependencies:
-      glob: 7.1.7
+      glob: 7.2.0
     dev: true
 
   /rimraf/3.0.2:
@@ -1055,8 +1066,8 @@ packages:
       object-inspect: 1.11.0
     dev: true
 
-  /signal-exit/3.0.3:
-    resolution: {integrity: sha512-VUJ49FC8U1OxwZLxIbTTrDvLnf/6TDgxZcK8wxR8zs13xpx7xbG60ndBlhNrFi2EMuFRoeDoJO7wthSLq42EjA==}
+  /signal-exit/3.0.5:
+    resolution: {integrity: sha512-KWcOiKeQj6ZyXx7zq4YxSMgHRlod4czeBQZrPb8OKcohcqAXShm7E20kEMle9WBt26hFcAf0qLOcp5zmY7kOqQ==}
     dev: true
 
   /sprintf-js/1.0.3:
@@ -1068,7 +1079,7 @@ packages:
     engines: {node: '>=0.10.0'}
     hasBin: true
     dependencies:
-      asn1: 0.2.4
+      asn1: 0.2.6
       assert-plus: 1.0.0
       bcrypt-pbkdf: 1.0.2
       dashdash: 1.14.1
@@ -1159,12 +1170,12 @@ packages:
       sync-request: 6.1.0
     dev: true
 
-  /textmate-tester/1.1.0:
-    resolution: {integrity: sha512-epye7K0QjePlGNpoY5lyG6SchJEUrTCk5qcabx7omagRpum4zsG8HsTR/3cUPYpdMlE5VJxB1Mr8HtHIEsv6jw==}
+  /textmate-tester/1.1.1:
+    resolution: {integrity: sha512-Nml2UaQvmDWZnK6R5AOp5R1LsTXmEH+lk2H5BPuoL29d996HRpoD4fBBSJNcllA+dW41PW1zq8pxMo7brayuxg==}
     hasBin: true
     dependencies:
       chalk: 2.4.2
-      glob: 7.1.7
+      glob: 7.2.0
       js-yaml: 3.14.1
       json-source-map: 0.4.0
       json-stable-stringify: 1.0.1
@@ -1324,8 +1335,8 @@ packages:
       isexe: 2.0.0
     dev: true
 
-  /wide-align/1.1.3:
-    resolution: {integrity: sha512-QGkOQc8XL6Bt5PwnsExKBPuMKBxnGxWWW3fU55Xt4feHozMUhdUMaBCk290qpm/wG5u/RSKzwdAC4i51YigihA==}
+  /wide-align/1.1.5:
+    resolution: {integrity: sha512-eDMORYaPNZ4sQIuuYPDHdQvf4gyCF9rEEV/yPxGfwPkRodwEgiMUUXTx/dex+Me0wxx53S+NgUHaP7y3MGlDmg==}
     dependencies:
       string-width: 1.0.2
     dev: true

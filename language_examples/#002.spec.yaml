@@ -1,1 +1,313 @@
-[]
+- source: '%'
+  scopesBegin:
+    - punctuation.definition.comment
+    - comment.line
+- source: '%'
+  scopesEnd:
+    - punctuation.definition.comment
+    - comment.line
+- source: ' import stuff'
+  scopes:
+    - comment.line
+- source: '%'
+  scopes:
+    - punctuation.definition.comment
+    - comment.line
+- source: ':-'
+  scopes:
+    - punctuation.section.function.definition
+    - entity.name.type
+    - keyword.operator
+- source: load_files
+  scopes:
+    - entity.name.function.call
+    - support.type.built-in
+- source: (
+  scopes:
+    - punctuation.section.function.call
+    - entity.name.function.call
+    - support.type.built-in
+- source: '['
+  scopes:
+    - punctuation.definition.list
+- source: my_agent
+  scopes:
+    - constant.language.symbol
+    - punctuation.section.regexp
+- source: ','
+  scopes:
+    - punctuation.terminator
+- source: wumpus_world
+  scopes:
+    - constant.language.symbol
+    - punctuation.section.regexp
+- source: ']'
+  scopes:
+    - punctuation.definition.list
+- source: )
+  scopes:
+    - punctuation.section.function.call
+    - entity.name.function.call
+    - support.type.built-in
+- source: .
+  scopes:
+    - punctuation.terminator
+- source: '%'
+  scopesBegin:
+    - punctuation.definition.comment
+    - comment.line
+- source: '%'
+  scopesEnd:
+    - punctuation.definition.comment
+    - comment.line
+- source: ' load the world, and the agent'
+  scopes:
+    - comment.line
+- source: '%'
+  scopes:
+    - punctuation.definition.comment
+    - comment.line
+- source: '['
+  scopes:
+    - keyword.control.import
+    - punctuation.section.regexp
+    - keyword.other.unit.import
+- source: wumpus_world
+  scopes:
+    - variable.language.file
+- source: ']'
+  scopes:
+    - keyword.control.import
+    - punctuation.section.regexp
+    - keyword.other.unit.import
+- source: .
+  scopes:
+    - punctuation.terminator
+- source: '['
+  scopes:
+    - keyword.control.import
+    - punctuation.section.regexp
+    - keyword.other.unit.import
+- source: my_agent
+  scopes:
+    - variable.language.file
+- source: ']'
+  scopes:
+    - keyword.control.import
+    - punctuation.section.regexp
+    - keyword.other.unit.import
+- source: .
+  scopes:
+    - punctuation.terminator
+- source: ':-'
+  scopes:
+    - punctuation.section.function.definition
+    - entity.name.type
+    - keyword.operator
+- source: '%'
+  scopesBegin:
+    - punctuation.definition.comment
+    - comment.line
+- source: '%'
+  scopesEnd:
+    - punctuation.definition.comment
+    - comment.line
+- source: ' put the world into motion'
+  scopes:
+    - comment.line
+- source: '%'
+  scopes:
+    - punctuation.definition.comment
+    - comment.line
+- source: wumpus
+  scopes:
+    - constant.language.symbol
+    - punctuation.section.regexp
+- source: ':'
+  scopes:
+    - keyword.operator
+- source: evaluate_agent
+  scopes:
+    - entity.name.function.call
+- source: (
+  scopes:
+    - punctuation.section.function.call
+    - entity.name.function.call
+- source: '1'
+  scopes:
+    - constant.numeric.decimal
+- source: ','
+  scopes:
+    - punctuation.terminator
+- source: Score
+  scopes:
+    - variable.other
+- source: ','
+  scopes:
+    - punctuation.terminator
+- source: Time
+  scopes:
+    - variable.other
+- source: )
+  scopes:
+    - punctuation.section.function.call
+    - entity.name.function.call
+- source: ','
+  scopes:
+    - punctuation.terminator
+- source: write
+  scopes:
+    - entity.name.function.call
+    - support.type.built-in
+- source: (
+  scopes:
+    - punctuation.section.function.call
+    - entity.name.function.call
+    - support.type.built-in
+- source: ''''
+  scopesBegin:
+    - string.quoted.single
+  scopes:
+    - string.quoted
+- source: 'Score:'
+- source: ''''
+  scopes:
+    - string.quoted
+  scopesEnd:
+    - string.quoted.single
+- source: )
+  scopes:
+    - punctuation.section.function.call
+    - entity.name.function.call
+    - support.type.built-in
+- source: ','
+  scopes:
+    - punctuation.terminator
+- source: write
+  scopes:
+    - entity.name.function.call
+    - support.type.built-in
+- source: (
+  scopes:
+    - punctuation.section.function.call
+    - entity.name.function.call
+    - support.type.built-in
+- source: Score
+  scopes:
+    - variable.other
+- source: )
+  scopes:
+    - punctuation.section.function.call
+    - entity.name.function.call
+    - support.type.built-in
+- source: ','
+  scopes:
+    - punctuation.terminator
+- source: write
+  scopes:
+    - entity.name.function.call
+    - support.type.built-in
+- source: (
+  scopes:
+    - punctuation.section.function.call
+    - entity.name.function.call
+    - support.type.built-in
+- source: ''''
+  scopesBegin:
+    - string.quoted.single
+  scopes:
+    - string.quoted
+- source: \n
+  scopes:
+    - constant.character.escape
+- source: ''''
+  scopes:
+    - string.quoted
+  scopesEnd:
+    - string.quoted.single
+- source: )
+  scopes:
+    - punctuation.section.function.call
+    - entity.name.function.call
+    - support.type.built-in
+- source: ','
+  scopes:
+    - punctuation.terminator
+- source: write
+  scopes:
+    - entity.name.function.call
+    - support.type.built-in
+- source: (
+  scopes:
+    - punctuation.section.function.call
+    - entity.name.function.call
+    - support.type.built-in
+- source: ''''
+  scopesBegin:
+    - string.quoted.single
+  scopes:
+    - string.quoted
+- source: 'Time:'
+- source: ''''
+  scopes:
+    - string.quoted
+  scopesEnd:
+    - string.quoted.single
+- source: )
+  scopes:
+    - punctuation.section.function.call
+    - entity.name.function.call
+    - support.type.built-in
+- source: ','
+  scopes:
+    - punctuation.terminator
+- source: write
+  scopes:
+    - entity.name.function.call
+    - support.type.built-in
+- source: (
+  scopes:
+    - punctuation.section.function.call
+    - entity.name.function.call
+    - support.type.built-in
+- source: Time
+  scopes:
+    - variable.other
+- source: )
+  scopes:
+    - punctuation.section.function.call
+    - entity.name.function.call
+    - support.type.built-in
+- source: ','
+  scopes:
+    - punctuation.terminator
+- source: write
+  scopes:
+    - entity.name.function.call
+    - support.type.built-in
+- source: (
+  scopes:
+    - punctuation.section.function.call
+    - entity.name.function.call
+    - support.type.built-in
+- source: ''''
+  scopesBegin:
+    - string.quoted.single
+  scopes:
+    - string.quoted
+- source: \n
+  scopes:
+    - constant.character.escape
+- source: ''''
+  scopes:
+    - string.quoted
+  scopesEnd:
+    - string.quoted.single
+- source: )
+  scopes:
+    - punctuation.section.function.call
+    - entity.name.function.call
+    - support.type.built-in
+- source: .
+  scopes:
+    - punctuation.terminator

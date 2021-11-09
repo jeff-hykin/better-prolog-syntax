@@ -3,7 +3,7 @@
   "name": "Prolog",
   "scopeName": "source.prolog",
   "fileTypes": [
-    "prolog"
+    ".pl"
   ],
   "patterns": [
     {
@@ -191,6 +191,20 @@
           "include": "$self"
         }
       ]
+    },
+    "04358e2e175_special_predicate_import": {
+      "match": "(\\[)(?:(?:\\s)+)?([a-zA-Z_][a-zA-Z_0-9]*)(?:(?:\\s)+)?(\\])(?=\\.)",
+      "captures": {
+        "1": {
+          "name": "keyword.control.import.prolog punctuation.section.regexp.prolog keyword.other.unit.import.prolog"
+        },
+        "2": {
+          "name": "variable.language.file.prolog"
+        },
+        "3": {
+          "name": "keyword.control.import.prolog punctuation.section.regexp.prolog keyword.other.unit.import.prolog"
+        }
+      }
     },
     "5aa8b7571b4_string_double_quote": {
       "begin": "\"",
@@ -624,7 +638,7 @@
     "predicate": {
       "patterns": [
         {
-          "include": "#04358e2e175_special_predicate"
+          "include": "#04358e2e175_special_predicate_import"
         },
         {
           "include": "#04358e2e175_predicate_definition"
