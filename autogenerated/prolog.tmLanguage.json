@@ -300,7 +300,7 @@
           "name": "constant.character.escape.prolog"
         },
         {
-          "match": "(0'(?:\\\\x))([0-9a-eA-E]+)",
+          "match": "(0'(?:\\\\x))([0-9a-fA-F]+)",
           "captures": {
             "1": {
               "name": "keyword.other.unit.hexadecimal.prolog"

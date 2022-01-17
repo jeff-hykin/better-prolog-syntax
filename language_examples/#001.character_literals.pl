@@ -6,6 +6,7 @@ display(0'#).
 display(0'?).
 display(0'').
 display(0'").
+display(0'\\).
 
 % escape character
 display(0'\123).
