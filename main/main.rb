@@ -25,6 +25,7 @@ grammar = Grammar.new(
 # 
     grammar[:$initial_context] = [
         :comments,
+        :character,
         :string,
         :numeric_literal,
         :operators,
@@ -91,6 +92,7 @@ grammar = Grammar.new(
 # 
     grammar.import(PathFor[:pattern]["comments"])
     grammar.import(PathFor[:pattern]["variables"])
+    grammar.import(PathFor[:pattern]["character"])
     grammar.import(PathFor[:pattern]["string"])
     grammar.import(PathFor[:pattern]["numeric_literal"])
     grammar.import(PathFor[:pattern]["predicate"])

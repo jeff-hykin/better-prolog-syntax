@@ -9,6 +9,7 @@ constant.numeric.exponent.decimal.prolog
 constant.numeric.exponent.hexadecimal.prolog
 constant.numeric.hexadecimal.prolog
 constant.numeric.octal.prolog
+constant.numeric.unicode.prolog
 entity.name.function.call.prolog
 entity.name.function.definition.prolog
 entity.name.type.prolog
@@ -22,6 +23,8 @@ keyword.operator.plus.exponent.hexadecimal.prolog
 keyword.operator.prolog
 keyword.operator.wordlike.prolog
 keyword.other.unit.binary.prolog
+keyword.other.unit.character.prolog
+keyword.other.unit.character.unicode.prolog
 keyword.other.unit.exponent.decimal.prolog
 keyword.other.unit.exponent.hexadecimal.prolog
 keyword.other.unit.hexadecimal.prolog

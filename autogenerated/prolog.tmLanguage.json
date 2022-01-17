@@ -10,6 +10,9 @@
       "include": "#comments"
     },
     {
+      "include": "#character"
+    },
+    {
       "include": "#string"
     },
     {
@@ -263,6 +266,76 @@
           "name": "variable.language.self.anonymous.prolog"
         }
       }
+    },
+    "character": {
+      "patterns": [
+        {
+          "match": "(0')[^\\\\]",
+          "captures": {
+            "1": {
+              "name": "keyword.other.unit.character.prolog"
+            }
+          },
+          "name": "constant.character.escape.prolog"
+        },
+        {
+          "match": "(0')(?:\\\\\\\\)",
+          "captures": {
+            "1": {
+              "name": "keyword.other.unit.character.prolog"
+            }
+          },
+          "name": "constant.character.escape.prolog"
+        },
+        {
+          "match": "(0'(?:\\\\))([0-7]+)",
+          "captures": {
+            "1": {
+              "name": "keyword.other.unit.octal.prolog"
+            },
+            "2": {
+              "name": "constant.numeric.octal.prolog"
+            }
+          },
+          "name": "constant.character.escape.prolog"
+        },
+        {
+          "match": "(0'(?:\\\\x))([0-9a-eA-E]+)",
+          "captures": {
+            "1": {
+              "name": "keyword.other.unit.hexadecimal.prolog"
+            },
+            "2": {
+              "name": "constant.numeric.hexadecimal.prolog"
+            }
+          },
+          "name": "constant.character.escape.prolog"
+        },
+        {
+          "match": "(0'(?:\\\\u))([0-9]{4})",
+          "captures": {
+            "1": {
+              "name": "keyword.other.unit.character.unicode.prolog"
+            },
+            "2": {
+              "name": "constant.numeric.unicode.prolog"
+            }
+          },
+          "name": "constant.character.escape.prolog"
+        },
+        {
+          "match": "(0'(?:\\\\U))([0-9]{8})",
+          "captures": {
+            "1": {
+              "name": "keyword.other.unit.character.unicode.prolog"
+            },
+            "2": {
+              "name": "constant.numeric.unicode.prolog"
+            }
+          },
+          "name": "constant.character.escape.prolog"
+        }
+      ]
     },
     "comments": {
       "patterns": [
