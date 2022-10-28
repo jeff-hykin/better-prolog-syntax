@@ -225,7 +225,15 @@
       "name": "string.quoted.double.prolog",
       "patterns": [
         {
-          "match": "\\\\.",
+          "match": "\\\\x[abcdefABCDEF0-9]+\\\\",
+          "name": "constant.character.escape.hex.prolog"
+        },
+        {
+          "match": "\\\\u....|\\\\U........",
+          "name": "constant.character.escape.unicode.prolog"
+        },
+        {
+          "match": "\\\\\\\\|\\\\'|\\\\\"|\\\"|\\\\a|\\\\b|\\\\c|\\\\e|\\\\f|\\\\n|\\\\r|\\\\s|\\\\t|\\\\v|\\\\\\n",
           "name": "constant.character.escape.prolog"
         }
       ]
@@ -246,7 +254,15 @@
       "name": "string.quoted.single.prolog",
       "patterns": [
         {
-          "match": "\\\\.",
+          "match": "\\\\x[abcdefABCDEF0-9]+\\\\",
+          "name": "constant.character.escape.hex.prolog"
+        },
+        {
+          "match": "\\\\u....|\\\\U........",
+          "name": "constant.character.escape.unicode.prolog"
+        },
+        {
+          "match": "\\\\\\\\|\\\\'|\\\\\"|\\\"|\\\\a|\\\\b|\\\\c|\\\\e|\\\\f|\\\\n|\\\\r|\\\\s|\\\\t|\\\\v|\\\\\\n",
           "name": "constant.character.escape.prolog"
         }
       ]

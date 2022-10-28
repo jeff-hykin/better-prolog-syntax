@@ -1,0 +1,39 @@
+- source: foo
+  scopes:
+    - constant.language.symbol
+    - punctuation.section.regexp
+- source: ':-'
+  scopes:
+    - punctuation.section.function.definition
+    - entity.name.type
+    - keyword.operator
+- source: write
+  scopes:
+    - entity.name.function.call
+    - support.type.built-in
+- source: (
+  scopes:
+    - punctuation.section.function.call
+    - entity.name.function.call
+    - support.type.built-in
+- source: ''''
+  scopesBegin:
+    - string.quoted.single
+  scopes:
+    - string.quoted
+- source: \x2\
+  scopes:
+    - constant.character.escape.hex
+- source: ''''
+  scopes:
+    - string.quoted
+  scopesEnd:
+    - string.quoted.single
+- source: )
+  scopes:
+    - punctuation.section.function.call
+    - entity.name.function.call
+    - support.type.built-in
+- source: .
+  scopes:
+    - punctuation.terminator

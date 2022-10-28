@@ -1,6 +1,8 @@
 comment.block.prolog
 comment.line.prolog
+constant.character.escape.hex.prolog
 constant.character.escape.prolog
+constant.character.escape.unicode.prolog
 constant.language.symbol.prolog
 constant.numeric.binary.prolog
 constant.numeric.decimal.point.prolog

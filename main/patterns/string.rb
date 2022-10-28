@@ -15,7 +15,7 @@ fancy_hex_escape = Pattern.new(
     tag_as: "constant.character.escape.hex"
 )
 unicode_escape = Pattern.new(
-    match: /\u....|\U......../,
+    match: /\\u....|\\U......../,
     tag_as: "constant.character.escape.unicode"
 )
 escape_pattern = Pattern.new(
@@ -54,7 +54,7 @@ export[:string_single_quote] = PatternRange.new(
     includes: [
         fancy_hex_escape,
         unicode_escape,
-        escape_pattern
+        escape_pattern,
     ],
 )
 
