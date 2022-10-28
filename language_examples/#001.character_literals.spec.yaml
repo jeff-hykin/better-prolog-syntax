@@ -1,0 +1,286 @@
+- source: '%'
+  scopes:
+    - punctuation.definition.comment
+    - comment.line
+- source: ' normal character'
+  scopes:
+    - comment.line
+- source: display
+  scopes:
+    - entity.name.function.call
+- source: (
+  scopes:
+    - punctuation.section.function.call
+    - entity.name.function.call
+- source: 0'
+  scopesBegin:
+    - constant.character.escape
+  scopes:
+    - keyword.other.unit.character
+- source: '1'
+  scopesEnd:
+    - constant.character.escape
+- source: )
+  scopes:
+    - punctuation.section.function.call
+    - entity.name.function.call
+- source: .
+  scopes:
+    - punctuation.terminator
+- source: display
+  scopes:
+    - entity.name.function.call
+- source: (
+  scopes:
+    - punctuation.section.function.call
+    - entity.name.function.call
+- source: 0'
+  scopesBegin:
+    - constant.character.escape
+  scopes:
+    - keyword.other.unit.character
+- source: a
+  scopesEnd:
+    - constant.character.escape
+- source: )
+  scopes:
+    - punctuation.section.function.call
+    - entity.name.function.call
+- source: .
+  scopes:
+    - punctuation.terminator
+- source: display
+  scopes:
+    - entity.name.function.call
+- source: (
+  scopes:
+    - punctuation.section.function.call
+    - entity.name.function.call
+- source: 0'
+  scopesBegin:
+    - constant.character.escape
+  scopes:
+    - keyword.other.unit.character
+- source: .
+  scopesEnd:
+    - constant.character.escape
+- source: )
+  scopes:
+    - punctuation.section.function.call
+    - entity.name.function.call
+- source: .
+  scopes:
+    - punctuation.terminator
+- source: display
+  scopes:
+    - entity.name.function.call
+- source: (
+  scopes:
+    - punctuation.section.function.call
+    - entity.name.function.call
+- source: 0'
+  scopesBegin:
+    - constant.character.escape
+  scopes:
+    - keyword.other.unit.character
+- source: '#'
+  scopesEnd:
+    - constant.character.escape
+- source: )
+  scopes:
+    - punctuation.section.function.call
+    - entity.name.function.call
+- source: .
+  scopes:
+    - punctuation.terminator
+- source: display
+  scopes:
+    - entity.name.function.call
+- source: (
+  scopes:
+    - punctuation.section.function.call
+    - entity.name.function.call
+- source: 0'
+  scopesBegin:
+    - constant.character.escape
+  scopes:
+    - keyword.other.unit.character
+- source: '?'
+  scopesEnd:
+    - constant.character.escape
+- source: )
+  scopes:
+    - punctuation.section.function.call
+    - entity.name.function.call
+- source: .
+  scopes:
+    - punctuation.terminator
+- source: display
+  scopes:
+    - entity.name.function.call
+- source: (
+  scopes:
+    - punctuation.section.function.call
+    - entity.name.function.call
+- source: 0'
+  scopesBegin:
+    - constant.character.escape
+  scopes:
+    - keyword.other.unit.character
+- source: ''''
+  scopesEnd:
+    - constant.character.escape
+- source: )
+  scopes:
+    - punctuation.section.function.call
+    - entity.name.function.call
+- source: .
+  scopes:
+    - punctuation.terminator
+- source: display
+  scopes:
+    - entity.name.function.call
+- source: (
+  scopes:
+    - punctuation.section.function.call
+    - entity.name.function.call
+- source: 0'
+  scopesBegin:
+    - constant.character.escape
+  scopes:
+    - keyword.other.unit.character
+- source: '"'
+  scopesEnd:
+    - constant.character.escape
+- source: )
+  scopes:
+    - punctuation.section.function.call
+    - entity.name.function.call
+- source: .
+  scopes:
+    - punctuation.terminator
+- source: display
+  scopes:
+    - entity.name.function.call
+- source: (
+  scopes:
+    - punctuation.section.function.call
+    - entity.name.function.call
+- source: 0'
+  scopesBegin:
+    - constant.character.escape
+  scopes:
+    - keyword.other.unit.character
+- source: \\
+  scopesEnd:
+    - constant.character.escape
+- source: )
+  scopes:
+    - punctuation.section.function.call
+    - entity.name.function.call
+- source: .
+  scopes:
+    - punctuation.terminator
+- source: '%'
+  scopes:
+    - punctuation.definition.comment
+    - comment.line
+- source: ' escape character'
+  scopes:
+    - comment.line
+- source: display
+  scopes:
+    - entity.name.function.call
+- source: (
+  scopes:
+    - punctuation.section.function.call
+    - entity.name.function.call
+- source: 0'\
+  scopesBegin:
+    - constant.character.escape
+  scopes:
+    - keyword.other.unit.octal
+- source: '123'
+  scopes:
+    - constant.numeric.octal
+  scopesEnd:
+    - constant.character.escape
+- source: )
+  scopes:
+    - punctuation.section.function.call
+    - entity.name.function.call
+- source: .
+  scopes:
+    - punctuation.terminator
+- source: display
+  scopes:
+    - entity.name.function.call
+- source: (
+  scopes:
+    - punctuation.section.function.call
+    - entity.name.function.call
+- source: 0'\x
+  scopesBegin:
+    - constant.character.escape
+  scopes:
+    - keyword.other.unit.hexadecimal
+- source: '123'
+  scopes:
+    - constant.numeric.hexadecimal
+  scopesEnd:
+    - constant.character.escape
+- source: )
+  scopes:
+    - punctuation.section.function.call
+    - entity.name.function.call
+- source: .
+  scopes:
+    - punctuation.terminator
+- source: display
+  scopes:
+    - entity.name.function.call
+- source: (
+  scopes:
+    - punctuation.section.function.call
+    - entity.name.function.call
+- source: 0'\u
+  scopesBegin:
+    - constant.character.escape
+  scopes:
+    - keyword.other.unit.character.unicode
+- source: '1234'
+  scopes:
+    - constant.numeric.unicode
+  scopesEnd:
+    - constant.character.escape
+- source: )
+  scopes:
+    - punctuation.section.function.call
+    - entity.name.function.call
+- source: .
+  scopes:
+    - punctuation.terminator
+- source: display
+  scopes:
+    - entity.name.function.call
+- source: (
+  scopes:
+    - punctuation.section.function.call
+    - entity.name.function.call
+- source: 0'\U
+  scopesBegin:
+    - constant.character.escape
+  scopes:
+    - keyword.other.unit.character.unicode
+- source: '00001234'
+  scopes:
+    - constant.numeric.unicode
+  scopesEnd:
+    - constant.character.escape
+- source: )
+  scopes:
+    - punctuation.section.function.call
+    - entity.name.function.call
+- source: .
+  scopes:
+    - punctuation.terminator

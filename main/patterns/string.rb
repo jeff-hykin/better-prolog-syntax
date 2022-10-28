@@ -10,10 +10,19 @@ export.exports = [ # patterns that are exported
 ]
 # (other :patterns can be created and used, but they will be namespace-randomized to keep them from ever conflicting/overwriting external patterns)
 
+fancy_hex_escape = Pattern.new(
+    match: /\\x[abcdefABCDEF0-9]+\\/,
+    tag_as: "constant.character.escape.hex"
+)
+unicode_escape = Pattern.new(
+    match: /\u....|\U......../,
+    tag_as: "constant.character.escape.unicode"
+)
 escape_pattern = Pattern.new(
-    match: /\\./,
+    match: /\\\\|\\'|\\"|\"|\\a|\\b|\\c|\\e|\\f|\\n|\\r|\\s|\\t|\\v|\\\n/,
     tag_as: "constant.character.escape"
 )
+# TODO: octal: https://www.swi-prolog.org/man/syntax.html
 
 export[:string_double_quote] = PatternRange.new(
     tag_as: "string.quoted.double",
@@ -26,7 +35,9 @@ export[:string_double_quote] = PatternRange.new(
         tag_as: "string.quoted"
     ),
     includes: [
-        escape_pattern
+        fancy_hex_escape,
+        unicode_escape,
+        escape_pattern,
     ],
 )
 
@@ -41,6 +52,8 @@ export[:string_single_quote] = PatternRange.new(
         tag_as: "string.quoted"
     ),
     includes: [
+        fancy_hex_escape,
+        unicode_escape,
         escape_pattern
     ],
 )
