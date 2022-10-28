@@ -9,6 +9,7 @@ require_relative './tokens.rb'
 # create grammar!
 # 
 # 
+# grammar = Grammar.fromTmLanguage("./original.tmLanguage.json")
 grammar = Grammar.new(
     name: "Prolog",
     scope_name: "source.prolog",
