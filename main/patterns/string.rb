@@ -19,7 +19,7 @@ unicode_escape = Pattern.new(
     tag_as: "constant.character.escape.unicode"
 )
 escape_pattern = Pattern.new(
-    match: /\\\\|\\'|\\"|\"|\\a|\\b|\\c|\\e|\\f|\\n|\\r|\\s|\\t|\\v|\\\n/,
+    match: /\\\\|''|\\'|\\"|\"|\\a|\\b|\\c|\\e|\\f|\\n|\\r|\\s|\\t|\\v|\\\n/,
     tag_as: "constant.character.escape"
 )
 # TODO: octal: https://www.swi-prolog.org/man/syntax.html
