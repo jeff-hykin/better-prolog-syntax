@@ -31,7 +31,9 @@
                     "prolog"
                 ],
                 "extensions": [
-                    ".pl"
+                    ".pl",
+                    ".pro",
+                    ".prolog"
                 ],
                 "configuration": "./prolog.configuration.json"
             }
