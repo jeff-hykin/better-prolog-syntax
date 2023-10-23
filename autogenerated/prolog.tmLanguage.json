@@ -233,7 +233,7 @@
           "name": "constant.character.escape.unicode.prolog"
         },
         {
-          "match": "\\\\\\\\|\\\\'|\\\\\"|\\\"|\\\\a|\\\\b|\\\\c|\\\\e|\\\\f|\\\\n|\\\\r|\\\\s|\\\\t|\\\\v|\\\\\\n",
+          "match": "\\\\\\\\|''|\\\\'|\\\\\"|\\\"|\\\\a|\\\\b|\\\\c|\\\\e|\\\\f|\\\\n|\\\\r|\\\\s|\\\\t|\\\\v|\\\\\\n",
           "name": "constant.character.escape.prolog"
         }
       ]
@@ -262,7 +262,7 @@
           "name": "constant.character.escape.unicode.prolog"
         },
         {
-          "match": "\\\\\\\\|\\\\'|\\\\\"|\\\"|\\\\a|\\\\b|\\\\c|\\\\e|\\\\f|\\\\n|\\\\r|\\\\s|\\\\t|\\\\v|\\\\\\n",
+          "match": "\\\\\\\\|''|\\\\'|\\\\\"|\\\"|\\\\a|\\\\b|\\\\c|\\\\e|\\\\f|\\\\n|\\\\r|\\\\s|\\\\t|\\\\v|\\\\\\n",
           "name": "constant.character.escape.prolog"
         }
       ]
